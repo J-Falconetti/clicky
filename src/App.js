@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import FriendCard from "./components/ShipCard";
+import Wrapper from "./components/Wrapper";
+import Title from "./components/Title";
+import ships from "./StarShips.json";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    ships
+  };
+
+  removeFriend = id => {
+    const ships = this.state.shipss.filter(ship => ship.id !== id);
+    this.setState({ ships });
+  };
+
+   render() {
+    return (
+      <Wrapper>
+        <Title>Ship-List</Title>
+        {this.state.ships.map(ship => (
+          <FriendCard
+            removeship={this.removeship}
+            id={ship.id}
+            key={ship.id}
+            name={ship.name}
+            image={ship.image}
+          />
+        ))}
+      </Wrapper>
+    );
+  }
 }
 
 export default App;
