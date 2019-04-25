@@ -1,26 +1,35 @@
 import React, { Component } from "react";
-import FriendCard from "./components/ShipCard";
+import ShipCard from "./components/ShipCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import ships from "./StarShips.json";
+import Nav from "./components/Nav";
 
 class App extends Component {
   state = {
-    ships
+    ships,
+    score: 0,
+    topScore: 0,
+    ids: []
+
   };
 
-  removeFriend = id => {
-    const ships = this.state.shipss.filter(ship => ship.id !== id);
-    this.setState({ ships });
+  handleClick = id => {
+    console.log(id)
   };
 
    render() {
     return (
       <Wrapper>
+        <Nav
+        score = {this.state.score}
+        topScore = {this.state.topScore}
+        />
+
         <Title>Ship-List</Title>
         {this.state.ships.map(ship => (
-          <FriendCard
-            removeship={this.removeship}
+          <ShipCard
+            handleClick={this.handleClick}
             id={ship.id}
             key={ship.id}
             name={ship.name}
