@@ -1,3 +1,6 @@
+# Click the Ship!
+This is a Star Wars base memory game, the idea is to not click the same ship twice!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

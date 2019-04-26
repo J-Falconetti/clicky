@@ -1,3 +1,9 @@
-body{
-    background: red;
+.navbar{
+    background: black;
+    color: yellow;
+    font-size: 200%;
+    padding-top: 40px;
+    padding-right: 600px;
+    padding-left: 600 px;
+    padding-bottom: 40px;
 }
