@@ -15,15 +15,34 @@ class App extends Component {
   };
 
   handleClick = id => {
-    console.log(id)
+    console.log("this is id " + id)
+    var isFound = this.state.ids.indexOf (id);
+  
+     if (isFound === -1) {
+       var newScore = this.state.score +1;
+       this.setState({score: newScore})
+        if(this.state.topScore < newScore ){
+          this.setState({topScore: newScore})
+        }
+       var check = [...this.state.ids,id];
+       console.log("this is check " + check)
+       this.setState({ids: check})
+     }
+     else{
+      this.setState({score: 0, ids: []})
+     }
+     
+
+
+    
     this.setState ({
       ships: this.shuffle(ships)
     })
-     
+  }
     // check if current id is in ids array
       // if id is in array end game and shuffle cards
       // if id is not in array then add to array, add one to score, checl to see if scrore > topscore if so make topScore = score and shuffle cards
-  };
+  
 
     // shuffle ships array -- google js shuffle array
     shuffle(ships) {
