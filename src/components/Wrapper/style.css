@@ -1,6 +1,6 @@
 .wrapper {
   padding-top: 50px;
-  background: darkgray;
+  background: black;
   height: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -12,8 +12,11 @@
 .wrapper h1{
   color: yellowgreen;
 }
+.ship-static{
+  background: black;
+}
 
-.wrapper:hover {
+.ship-shake {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;

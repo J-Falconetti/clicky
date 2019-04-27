@@ -10,7 +10,8 @@ class App extends Component {
     ships,
     score: 0,
     topScore: 0,
-    ids: []
+    ids: [],
+    shakeClass: "ship-static"
 
   };
 
@@ -19,6 +20,7 @@ class App extends Component {
     var isFound = this.state.ids.indexOf (id);
   
      if (isFound === -1) {
+      this.setState({shakeClass: "ship-static"})
        var newScore = this.state.score +1;
        this.setState({score: newScore})
         if(this.state.topScore < newScore ){
@@ -29,6 +31,7 @@ class App extends Component {
        this.setState({ids: check})
      }
      else{
+       this.setState({shakeClass: "ship-shake"})
       this.setState({score: 0, ids: []})
      }
      
@@ -63,7 +66,8 @@ class App extends Component {
 
    render() {
     return (
-      <Wrapper>
+      <Wrapper className= {this.state.shakeClass}>
+
         <Nav
         score = {this.state.score}
         topScore = {this.state.topScore}
@@ -78,7 +82,8 @@ class App extends Component {
             name={ship.name}
             image={ship.image}
           />
-        ))}
+                  ))}
+     
       </Wrapper>
     );
   }
