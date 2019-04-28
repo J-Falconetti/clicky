@@ -24,7 +24,6 @@ class App extends Component {
        var newScore = this.state.score +1;
        this.setState({score: newScore})
        if (newScore === 12){
-         alert("Strong are you with the force a jedi you must be: Click any image to restat the game")
        }
         if(this.state.topScore < newScore ){
           this.setState({topScore: newScore})
