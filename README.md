@@ -1,7 +1,7 @@
 # Click the Ship!
 This is a Star Wars base memory game, the idea is to not click the same ship twice!
 
-Are you a jedi?  Get all 12 see
+Are you a jedi?  Can you get all 12 see
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
